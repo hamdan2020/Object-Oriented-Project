@@ -4,45 +4,41 @@ using namespace std;
 
 int main()
 {
-    int v;
 
-    Game g;
+    Game G1;
+    int x;
 
     cout << "Game ON!!" << endl;
 
-    while(true){
-
+    while(true)
+    {
         cout << "Player ";
-        cout << g.turn;
+        cout << G1.turn;
         cout << " Turn" << endl;
 
+        if(G1.isFull() == 0)
+        {
+            cin >> x;
+            G1.set_loc(x);
+            G1.setCell(G1.ret_loc());
+            if(G1.winCase() == 1)
+            {
+                cout <<" GAME OVER!! \n";
+                cout << "The Winner Player " << G1.turnRev() << endl;
+                G1.display();
+                break;
 
+            }
 
-
-        if(g.isFull() == 0){
-        cin >> g.loc;
-     //   v= g.loc;
-        g.setCell(g.loc);
-        g.display();
         }
+
         else
         {
             cout <<"Tie" << endl;
             break;
         }
 
-
-
-
-
-
-
     }
-    cout << g.limit << endl;
-    g.display();
-
-
-
 
 
     return 0;

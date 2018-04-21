@@ -4,23 +4,25 @@
 using namespace std;
 
 class Game
-{
-    public:
 
+{
+private:
+    string cell[3][3];
+    int loc;
+
+    public:
         Game();
-        string cell[3][3];
-        int cell_size = 9,limit=0,loc;
+        void set_loc(int loc);
+        int ret_loc();
         string turn = "X";
         void display();
         void setTurn();
         string xTurn();
+        string turnRev();
         void setCell(int y);
         bool isFull();
+        bool winCase();
 
-
-    protected:
-
-    private:
 };
 
 #endif // GAME_H

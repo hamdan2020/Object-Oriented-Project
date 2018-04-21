@@ -1,12 +1,23 @@
 # depslib dependency file v1.0
-1524306583 source:c:\users\hamdan\desktop\cplus\code04\game.cpp
+1524314905 source:c:\users\hamdan\desktop\cplus\code04\game.cpp
 	"Game.h"
 	<iostream>
 
-1524305758 c:\users\hamdan\desktop\cplus\code04\game.h
+1524314905 c:\users\hamdan\desktop\cplus\code04\game.h
 	<iostream>
 
-1524306138 source:c:\users\hamdan\desktop\cplus\code04\main.cpp
+1524314963 source:c:\users\hamdan\desktop\cplus\code04\main.cpp
+	<iostream>
+	"Game.h"
+
+1524314905 source:c:\users\hamdan\documents\github\object-oriented-project\project\game.cpp
+	"Game.h"
+	<iostream>
+
+1524314905 c:\users\hamdan\documents\github\object-oriented-project\project\game.h
+	<iostream>
+
+1524314963 source:c:\users\hamdan\documents\github\object-oriented-project\project\main.cpp
 	<iostream>
 	"Game.h"
 

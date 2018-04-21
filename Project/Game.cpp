@@ -4,6 +4,7 @@
 
 using namespace std;
 
+// Default Constructor
 Game::Game()
 {
     for(int i=0; i<3; i++)
@@ -16,8 +17,7 @@ Game::Game()
 
 }
 
-
-///// Case Block
+// Case Block
 
 void Game::setCell(int x)
 {
@@ -123,6 +123,19 @@ void Game::setCell(int x)
     }
 }
 
+void Game::set_loc(int loc){
+
+    this-> loc = loc;
+
+
+}
+
+int Game::ret_loc(){
+
+    return loc;
+
+
+}
 /////
 
 /*void Game::setTurn(){
@@ -157,10 +170,12 @@ string Game::xTurn()
 
 }
 
-bool Game::isFull(){
+bool Game::isFull()
+{
     int flag= 1;
-    for(int i=0;i<3;i++){
-        for(int j=0;j<3;j++)
+    for(int i=0; i<3; i++)
+    {
+        for(int j=0; j<3; j++)
         {
             if(cell[i][j] == "NULL")
             {
@@ -175,6 +190,41 @@ bool Game::isFull(){
     }
     else
         return true;
+
+}
+
+bool Game::winCase()
+{
+
+    for (int row = 0; row < 3; row++)
+    {
+
+        if (cell[row][0] == "X" && cell[row][1] == "X" && cell[row][2] == "X" || cell[row][0] == "O" && cell[row][1] == "O" && cell[row][2] == "O")
+        {
+            return true;
+        }
+        else if (cell[0][row] == "X" && cell[1][row] == "X" && cell[2][row] == "X" || cell[0][row] == "O" && cell[1][row] == "O" && cell[2][row] == "O")
+        {
+            return true;
+        }
+        else if (cell[0][0] == "X" && cell[1][1] == "X" && cell[2][2] == "X" || cell[0][0] == "O" && cell[1][1] == "O" && cell[2][2] == "O")
+        {
+            return true;
+        }
+        else if (cell[0][2] == "X" && cell[1][1] == "X" && cell[2][0] == "X" || cell[0][2] == "O" && cell[1][1] == "O" && cell[2][0] == "O")
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+string Game::turnRev(){
+    if(turn == "X")
+        return "O";
+    else
+        return "X";
 
 }
 
