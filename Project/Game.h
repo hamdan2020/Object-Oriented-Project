@@ -1,9 +1,9 @@
-#ifndef GAME_H
+#//ifndef GAME_H
 #define GAME_H
 #include<iostream>
 using namespace std;
 
-class Game
+class Game//This is class of a game
 
 {
 private:
