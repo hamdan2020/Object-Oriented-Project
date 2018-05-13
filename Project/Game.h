@@ -2,7 +2,7 @@
 #define GAME_H
 #include<iostream>
 using namespace std;
-
+// GAME CLASS
 class Game
 
 {
