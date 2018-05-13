@@ -5,6 +5,7 @@
 using namespace std;
 
 // Default Constructor
+
 Game::Game()
 {
     for(int i=0; i<3; i++)
@@ -15,9 +16,55 @@ Game::Game()
         }
     }
 
+    // Calling Method Gamerun for implementing Class Game & Running the game
+
+    Gamerun();
+
 }
 
-// Case Block
+// Implementation of Method Gamerun for implementing Class Game & Running the game
+
+void Game::Gamerun(){
+
+    int x;
+
+    while(true)
+    {
+
+        cout << "Player ";
+        cout << turn;
+        cout << " Turn" << endl;
+
+        if(isFull() == 0)
+        {
+            cin >> x;
+            set_loc(x);
+            setCell(ret_loc());
+            if(winCase() == 1)
+            {
+                cout <<" GAME OVER!! \n";
+                cout << "The Winner Player " << turnRev() << endl;
+                display();
+                break;
+
+            }
+
+        }
+
+        else
+        {
+            cout <<"Tie" << endl;
+            display();
+            break;
+        }
+
+    }
+
+
+
+}
+
+// Case Block to insert X or O on which location
 
 void Game::setCell(int x)
 {
@@ -117,11 +164,13 @@ void Game::setCell(int x)
 
 
     default:
-        cout <<"Error ";
+        cout <<"Out of bounds ";
         break;
 
     }
 }
+
+// Set value inside X to private variable loc
 
 void Game::set_loc(int loc){
 
@@ -130,6 +179,7 @@ void Game::set_loc(int loc){
 
 }
 
+// Return loc
 int Game::ret_loc(){
 
     return loc;
@@ -153,7 +203,7 @@ int Game::ret_loc(){
 
 } */
 
-
+// Determine which Players has the turn
 string Game::xTurn()
 {
 
@@ -170,6 +220,7 @@ string Game::xTurn()
 
 }
 
+// Check if the board is Full
 bool Game::isFull()
 {
     int flag= 1;
@@ -193,11 +244,14 @@ bool Game::isFull()
 
 }
 
+// winning Conditions
 bool Game::winCase()
 {
 
     for (int row = 0; row < 3; row++)
     {
+
+
 
         if (cell[row][0] == "X" && cell[row][1] == "X" && cell[row][2] == "X" || cell[row][0] == "O" && cell[row][1] == "O" && cell[row][2] == "O")
         {
@@ -220,6 +274,7 @@ bool Game::winCase()
     return false;
 }
 
+// Return which Player won the game
 string Game::turnRev(){
     if(turn == "X")
         return "O";
@@ -228,7 +283,7 @@ string Game::turnRev(){
 
 }
 
-
+// Display the final board
 void Game::display()
 {
 

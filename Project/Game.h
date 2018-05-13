@@ -20,6 +20,7 @@ private:
         string xTurn();
         string turnRev();
         void setCell(int y);
+        void Gamerun();
         bool isFull();
         bool winCase();
 
